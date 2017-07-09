@@ -1,0 +1,10 @@
+dataset= read.table("household_power_consumption.txt",head=TRUE,sep = ";", na.strings="?")
+dataset$Date=as.Date(dataset$Date,"%d/%m/%Y")
+dataset$Time=strptime(dataset$Time, "%H:%M:%S")
+dataset$Time=format(dataset$Time, format="%H:%M:%S")
+dataset=dataset[dataset$Date >= "2007-02-01" & dataset$Date <= "2007-02-02",]
+dataset$Datetime <- with(dataset, as.POSIXct(paste(dataset$Date, dataset$Time)))
+plot(dataset$Datetime, dataset$Sub_metering_1, type="l",ylab = "Energy Sub Metering",xlab = "",col="black")
+lines(dataset$Datetime, dataset$Sub_metering_2,ylab = "Energy Sub Metering", type = "l", col = "red")
+lines(dataset$Datetime, dataset$Sub_metering_3,ylab = "Energy Sub Metering", type = "l", col = "blue")
+legend('topright', c("Sub_metering1","Sub_metering2","Sub_metering3"), lty=1, col=c('black', 'red', 'blue'), bty='n', cex=.75)
