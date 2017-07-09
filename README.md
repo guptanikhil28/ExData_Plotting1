@@ -34,3 +34,7 @@ The following descriptions of the 9 variables is mentioned below:
 ## Objective
 
 My overall goal here was to simply examine how household energy usage varies over a 2-day period in February, 2007. This incorporated the analysis of variation of Global Active Power v/s Frequency, Energy Sub-Metering v/s Time & Global Reactive Power v/s Frequency.
+
+## Results
+
+Results of this analysis have been exhibited graphically using the series of plots (PlotX where X is a natural number)
